@@ -1,1 +1,584 @@
-[]
+[
+    {
+        "id": "93ce7d1f.f653b",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d18be9ba.27e388",
+        "type": "chatbot-context-store",
+        "z": "",
+        "name": "memory",
+        "contextStorage": "memory",
+        "contextParams": ""
+    },
+    {
+        "id": "3d36f84d.0834c8",
+        "type": "chatbot-slack-node",
+        "z": "",
+        "botname": "Guidone_bot",
+        "usernames": "",
+        "username": "guidaccio",
+        "iconEmoji": ":+1:",
+        "store": "d18be9ba.27e388",
+        "log": "",
+        "debug": true
+    },
+    {
+        "id": "f325c230.0c77a",
+        "type": "chatbot-slack-receive",
+        "z": "93ce7d1f.f653b",
+        "bot": "3d36f84d.0834c8",
+        "botProduction": "",
+        "x": 121,
+        "y": 468,
+        "wires": [
+            [
+                "5595e7c3.a2db08",
+                "9f81093a.8a27a8"
+            ]
+        ]
+    },
+    {
+        "id": "36bb2b65.bfd274",
+        "type": "chatbot-message",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "message": [
+            {
+                "message": "test"
+            }
+        ],
+        "answer": false,
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "bde7b38a.7407",
+        "type": "chatbot-slack-send",
+        "z": "93ce7d1f.f653b",
+        "bot": "3d36f84d.0834c8",
+        "botProduction": "",
+        "track": false,
+        "passThrough": false,
+        "outputs": 0,
+        "x": 1040,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "eb152b22.d7a768",
+        "type": "chatbot-image",
+        "z": "93ce7d1f.f653b",
+        "name": "test image",
+        "filename": "",
+        "image": "/web/test.png",
+        "caption": "Test image",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "de84a4e6.1649f8",
+        "type": "chatbot-document",
+        "z": "93ce7d1f.f653b",
+        "name": "test file",
+        "filename": "/web/cacca.png.zip",
+        "caption": "Test file",
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "bde7b38a.7407",
+                "a6fd4fe5.085e2"
+            ]
+        ]
+    },
+    {
+        "id": "5595e7c3.a2db08",
+        "type": "chatbot-debug",
+        "z": "93ce7d1f.f653b",
+        "x": 350,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a6fd4fe5.085e2",
+        "type": "debug",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 609,
+        "y": 412,
+        "wires": []
+    },
+    {
+        "id": "fe35dcee.ff0ba",
+        "type": "chatbot-inline-buttons",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Postback 1",
+                "value": "postback 1",
+                "answer": "",
+                "alert": false,
+                "style": "default"
+            },
+            {
+                "type": "postback",
+                "label": "Postaback 2",
+                "value": "postback 2",
+                "answer": "Yes!",
+                "alert": false,
+                "style": "primary"
+            },
+            {
+                "type": "postback",
+                "label": "Postback 3",
+                "value": "postback 3",
+                "answer": "Yes!",
+                "alert": false,
+                "style": "danger"
+            },
+            {
+                "type": "dialog",
+                "label": "Open dialog",
+                "value": "dialog1",
+                "answer": "Opened!",
+                "alert": false,
+                "style": ""
+            }
+        ],
+        "message": "",
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "3578788e.bbcd38",
+        "type": "chatbot-location",
+        "z": "93ce7d1f.f653b",
+        "name": "Loc",
+        "latitude": "43",
+        "longitude": "21",
+        "place": "Bologna",
+        "x": 359,
+        "y": 495,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "361a0571.19102a",
+        "type": "chatbot-audio",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "track": false,
+        "x": 390,
+        "y": 556,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "3df44ea1.3a2dc2",
+        "type": "chatbot-generic-template",
+        "z": "93ce7d1f.f653b",
+        "name": "Template 1",
+        "title": "Title",
+        "subtitle": "Si come no",
+        "imageUrl": "",
+        "sharable": true,
+        "aspectRatio": "horizontal",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Test 1",
+                "value": "test 1",
+                "answer": "",
+                "alert": false,
+                "style": ""
+            },
+            {
+                "type": "postback",
+                "label": "Test 2",
+                "value": "test 2",
+                "answer": "",
+                "alert": false,
+                "style": "danger"
+            }
+        ],
+        "x": 391,
+        "y": 628,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "3c5291c0.d6459e",
+        "type": "chatbot-generic-template",
+        "z": "93ce7d1f.f653b",
+        "name": "Template 2",
+        "title": "Title",
+        "subtitle": "Si come no 2",
+        "imageUrl": "",
+        "sharable": true,
+        "aspectRatio": "horizontal",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Test 1",
+                "value": "test 1",
+                "answer": "",
+                "alert": false,
+                "style": ""
+            },
+            {
+                "type": "postback",
+                "label": "Test 2",
+                "value": "test 2",
+                "answer": "",
+                "alert": false,
+                "style": "danger"
+            }
+        ],
+        "x": 391,
+        "y": 708,
+        "wires": [
+            [
+                "100f89aa.b5d406"
+            ]
+        ]
+    },
+    {
+        "id": "100f89aa.b5d406",
+        "type": "chatbot-generic-template",
+        "z": "93ce7d1f.f653b",
+        "name": "Template 3",
+        "title": "Title",
+        "subtitle": "Si come no 3",
+        "imageUrl": "",
+        "sharable": true,
+        "aspectRatio": "horizontal",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Test 4",
+                "value": "test 4",
+                "answer": "",
+                "alert": false,
+                "style": ""
+            },
+            {
+                "type": "postback",
+                "label": "Test 2",
+                "value": "test 5",
+                "answer": "",
+                "alert": false,
+                "style": "danger"
+            }
+        ],
+        "x": 571,
+        "y": 708,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "8fcda1b0.9a49d",
+        "type": "chatbot-message",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "message": [
+            ""
+        ],
+        "answer": false,
+        "x": 391,
+        "y": 1028,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "79e1aa35.b37674",
+        "type": "inject",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 201,
+        "y": 1028,
+        "wires": [
+            [
+                "8fcda1b0.9a49d"
+            ]
+        ]
+    },
+    {
+        "id": "8fe0e111.dfe28",
+        "type": "chatbot-conversation",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "chatId": "D870ESPT4",
+        "transport": "slack",
+        "store": "",
+        "x": 371,
+        "y": 1148,
+        "wires": [
+            [
+                "78c031c9.98d5a"
+            ]
+        ]
+    },
+    {
+        "id": "78c031c9.98d5a",
+        "type": "chatbot-message",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "message": [
+            {
+                "message": "I am a conversation"
+            }
+        ],
+        "answer": false,
+        "x": 511,
+        "y": 1148,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "c47e0add.748b88",
+        "type": "inject",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 201,
+        "y": 1148,
+        "wires": [
+            [
+                "8fe0e111.dfe28"
+            ]
+        ]
+    },
+    {
+        "id": "2588d01f.f427b",
+        "type": "chatbot-dialog",
+        "z": "93ce7d1f.f653b",
+        "submitLabel": "Manna",
+        "title": "I am a dialog",
+        "elements": [
+            {
+                "type": "text",
+                "label": "Label 1",
+                "name": "name1",
+                "value": "",
+                "placeholder": "Enter value 1",
+                "hint": "Dai!",
+                "optional": false
+            },
+            {
+                "type": "textarea",
+                "label": "Text area 1",
+                "name": "text2",
+                "value": "",
+                "placeholder": "Enter a long text",
+                "hint": "Long text",
+                "optional": false
+            },
+            {
+                "type": "select",
+                "label": "Select one",
+                "name": "select1",
+                "options": [
+                    {
+                        "value": "one",
+                        "label": "One"
+                    },
+                    {
+                        "value": "two",
+                        "label": "Two"
+                    },
+                    {
+                        "value": "three",
+                        "label": "Three"
+                    }
+                ]
+            }
+        ],
+        "x": 590,
+        "y": 140,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "d5619b33.eea528",
+        "type": "chatbot-rules",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "rules": [
+            {
+                "type": "messageType",
+                "messageType": "dialog"
+            },
+            {
+                "type": "catchAll"
+            }
+        ],
+        "outputs": 2,
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "2588d01f.f427b"
+            ],
+            [
+                "fe35dcee.ff0ba"
+            ]
+        ]
+    },
+    {
+        "id": "9c143f71.bd50f",
+        "type": "chatbot-rules",
+        "z": "93ce7d1f.f653b",
+        "name": "Is command",
+        "rules": [
+            {
+                "type": "anyCommand"
+            },
+            {
+                "type": "catchAll"
+            }
+        ],
+        "outputs": 2,
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "3d4fb3b6.7277ec"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3d4fb3b6.7277ec",
+        "type": "chatbot-message",
+        "z": "93ce7d1f.f653b",
+        "name": "Was command",
+        "message": [
+            {
+                "message": "Command {{message}}"
+            }
+        ],
+        "answer": false,
+        "silent": false,
+        "x": 600,
+        "y": 80,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "1d1035e1.48dbfa",
+        "type": "chatbot-inline-buttons",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Button 1",
+                "value": "button1",
+                "answer": "",
+                "alert": false,
+                "style": "default"
+            },
+            {
+                "type": "postback",
+                "label": "Button 2",
+                "value": "button2",
+                "answer": "",
+                "alert": false,
+                "style": "primary"
+            },
+            {
+                "type": "postback",
+                "label": "Button 3",
+                "value": "button 3 ",
+                "answer": "Feedback",
+                "alert": false,
+                "style": "danger"
+            }
+        ],
+        "message": "",
+        "x": 380,
+        "y": 800,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "9f81093a.8a27a8",
+        "type": "chatbot-slack-blocks",
+        "z": "93ce7d1f.f653b",
+        "blocks": "{\n\t\"blocks\": [\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"Hello, Assistant to the Regional Manager Dwight! *Michael Scott* wants to know where you'd like to take the Paper Company investors to dinner tonight.\\n\\n *Please select a restaurant:*\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"divider\"\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"*Ler Ros*\\n:star::star::star::star: 2082 reviews\\n I would really recommend the  Yum Koh Moo Yang - Spicy lime dressing and roasted quick marinated pork shoulder, basil leaves, chili & rice powder.\"\n\t\t\t},\n\t\t\t\"accessory\": {\n\t\t\t\t\"type\": \"image\",\n\t\t\t\t\"image_url\": \"https://s3-media2.fl.yelpcdn.com/bphoto/DawwNigKJ2ckPeDeDM7jAg/o.jpg\",\n\t\t\t\t\"alt_text\": \"alt text for image\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"divider\"\n\t\t},\n\t\t{\n\t\t\t\"type\": \"actions\",\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Farmhouse\",\n\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t},\n\t\t\t\t\t\"value\": \"click_me_123\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Kin Khao\",\n\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t},\n\t\t\t\t\t\"value\": \"click_me_123\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Ler Ros\",\n\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t},\n\t\t\t\t\t\"value\": \"click_me_123\"\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"Pick an item from the dropdown list\"\n\t\t\t},\n\t\t\t\"accessory\": {\n\t\t\t\t\"type\": \"static_select\",\n\t\t\t\t\"placeholder\": {\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"Select an item\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t\"options\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\t\"text\": \"Choice 1\",\n\t\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"value\": \"value-0\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\t\"text\": \"Choice 2\",\n\t\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"value\": \"value-1\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\t\"text\": \"Choice 3\",\n\t\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"value\": \"value-2\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"fields\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}",
+        "noerr": 0,
+        "x": 370,
+        "y": 880,
+        "wires": [
+            [
+                "bde7b38a.7407"
+            ]
+        ]
+    }
+]
