@@ -36,8 +36,7 @@
         "y": 468,
         "wires": [
             [
-                "5595e7c3.a2db08",
-                "9f81093a.8a27a8"
+                "d5619b33.eea528"
             ]
         ]
     },
@@ -49,6 +48,9 @@
         "message": [
             {
                 "message": "test"
+            },
+            {
+                "message": "test 2"
             }
         ],
         "answer": false,
@@ -168,7 +170,7 @@
         ],
         "message": "",
         "x": 580,
-        "y": 180,
+        "y": 220,
         "wires": [
             [
                 "bde7b38a.7407"
@@ -469,15 +471,22 @@
                 "messageType": "dialog"
             },
             {
+                "type": "messageEvent",
+                "event": "file_deleted"
+            },
+            {
                 "type": "catchAll"
             }
         ],
-        "outputs": 2,
+        "outputs": 3,
         "x": 370,
         "y": 160,
         "wires": [
             [
                 "2588d01f.f427b"
+            ],
+            [
+                "20e2acf9.7dfd64"
             ],
             [
                 "fe35dcee.ff0ba"
@@ -578,6 +587,149 @@
         "wires": [
             [
                 "bde7b38a.7407"
+            ]
+        ]
+    },
+    {
+        "id": "5e30e5fe.c9d04c",
+        "type": "chatbot-slack-receive",
+        "z": "93ce7d1f.f653b",
+        "bot": "3d36f84d.0834c8",
+        "botProduction": "",
+        "x": 180,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4eff4a7c.757b84",
+        "type": "chatbot-slack-blocks",
+        "z": "93ce7d1f.f653b",
+        "blocks": "{\n\t\"blocks\": [\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"Hello, Assistant to the Regional Manager Dwight! *Michael Scott* wants to know where you'd like to take the Paper Company investors to dinner tonight.\\n\\n *Please select a restaurant:*\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"divider\"\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"*Ler Ros*\\n:star::star::star::star: 2082 reviews\\n I would really recommend the  Yum Koh Moo Yang - Spicy lime dressing and roasted quick marinated pork shoulder, basil leaves, chili & rice powder.\"\n\t\t\t},\n\t\t\t\"accessory\": {\n\t\t\t\t\"type\": \"image\",\n\t\t\t\t\"image_url\": \"https://s3-media2.fl.yelpcdn.com/bphoto/DawwNigKJ2ckPeDeDM7jAg/o.jpg\",\n\t\t\t\t\"alt_text\": \"alt text for image\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"divider\"\n\t\t},\n\t\t{\n\t\t\t\"type\": \"actions\",\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Farmhouse\",\n\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t},\n\t\t\t\t\t\"value\": \"click_me_123\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Kin Khao\",\n\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t},\n\t\t\t\t\t\"value\": \"click_me_123\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Ler Ros\",\n\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t},\n\t\t\t\t\t\"value\": \"click_me_123\"\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"Pick an item from the dropdown list\"\n\t\t\t},\n\t\t\t\"accessory\": {\n\t\t\t\t\"type\": \"static_select\",\n\t\t\t\t\"placeholder\": {\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"Select an item\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t\"options\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\t\"text\": \"Choice 1\",\n\t\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"value\": \"value-0\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\t\"text\": \"Choice 2\",\n\t\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"value\": \"value-1\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\t\"text\": \"Choice 3\",\n\t\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"value\": \"value-2\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"fields\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"*this is plain_text text*\",\n\t\t\t\t\t\"emoji\": true\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}",
+        "noerr": 0,
+        "x": 530,
+        "y": 1320,
+        "wires": [
+            [
+                "86af4f2d.3b226"
+            ]
+        ]
+    },
+    {
+        "id": "86af4f2d.3b226",
+        "type": "chatbot-slack-send",
+        "z": "93ce7d1f.f653b",
+        "bot": "3d36f84d.0834c8",
+        "botProduction": "",
+        "track": false,
+        "passThrough": false,
+        "outputs": 0,
+        "x": 850,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "9c37caa9.332018",
+        "type": "chatbot-rules",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "rules": [
+            {
+                "type": "messageType",
+                "messageType": "response"
+            },
+            {
+                "type": "catchAll"
+            }
+        ],
+        "outputs": 2,
+        "x": 350,
+        "y": 1280,
+        "wires": [
+            [
+                "92b3bd71.d7efe"
+            ],
+            [
+                "4eff4a7c.757b84"
+            ]
+        ]
+    },
+    {
+        "id": "92b3bd71.d7efe",
+        "type": "chatbot-context",
+        "z": "93ce7d1f.f653b",
+        "command": "intent",
+        "fieldValue": "",
+        "fieldType": "str",
+        "fieldName": "",
+        "x": 540,
+        "y": 1240,
+        "wires": [
+            [
+                "5e8d07a2.0cb498"
+            ]
+        ]
+    },
+    {
+        "id": "5e8d07a2.0cb498",
+        "type": "chatbot-message",
+        "z": "93ce7d1f.f653b",
+        "name": "Reply",
+        "message": [
+            {
+                "message": ""
+            }
+        ],
+        "answer": false,
+        "silent": false,
+        "x": 710,
+        "y": 1240,
+        "wires": [
+            [
+                "86af4f2d.3b226"
+            ]
+        ]
+    },
+    {
+        "id": "20e2acf9.7dfd64",
+        "type": "function",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "func": "console.log('EVENT:', msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6bebb93.626d38",
+        "type": "chatbot-support-table",
+        "z": "93ce7d1f.f653b",
+        "x": 360,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "92863933.cc71e8",
+        "type": "inject",
+        "z": "93ce7d1f.f653b",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 960,
+        "wires": [
+            [
+                "c6bebb93.626d38"
             ]
         ]
     }
